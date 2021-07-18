@@ -38,8 +38,9 @@ export function getSortedPostsData() {
 }
 
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory)
-  fileNames.filter(post => post !== '[id].tsx')
+  let fileNames = fs.readdirSync(postsDirectory)
+  fileNames = fileNames.filter(post => post !== '[id].tsx')
+  console.log(fileNames)
   return fileNames.map(fileName => {
     return {
       params: {
