@@ -8,6 +8,11 @@ export const ProfileWrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  ${media.lessThan("large")`
+    flex-direction: row;
+    gap: 30px;
+  `}
 `
 
 export const ProfileLink = styled(Link)`
@@ -29,8 +34,9 @@ export const ProfileAuthor = styled.h1`
   margin: 0.5rem auto 1.5rem;
 
   ${media.lessThan("large")`
-  font-size: 1.2rem;
+    font-size: 1.2rem;
     margin: 0 0 0 10px;
+    align-self: center;
   `}
 `
 
@@ -42,6 +48,7 @@ export const ProfilePosition = styled.small`
   ${media.lessThan("large")`
     font-size: 0.8rem;
     margin-top: 0.2rem;
+    display: none;
   `}
 `
 
