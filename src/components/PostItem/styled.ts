@@ -3,7 +3,7 @@ import media from "styled-media-query"
 
 import Link from 'next/link'
 
-export const PostItemContainer = styled.div`
+export const PostItemContainer = styled.li`
   cursor: pointer;
 `
 
@@ -99,6 +99,10 @@ export const PostItemTitle = styled.h1`
   body #grid & {
     line-height: 1.1;
     margin: 0.8rem 0;
+  }
+
+  &:hover {
+    color: var(--highlight);
   }
 `
 

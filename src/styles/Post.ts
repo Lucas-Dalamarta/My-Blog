@@ -8,6 +8,28 @@ export const PostContainer = styled.article`
   flex-direction: column;
 `
 
+export const PostHeader = styled.header`
+  color: var(--postColor);
+  margin: auto;
+  max-width: 70rem;
+  padding: 5rem 5rem 0;
+  ${media.lessThan("large")`
+    padding: 3rem 0 0;
+    max-width: 100%;
+  `}
+`
+
+export const PostDescription = styled.h2`
+  font-size: 2rem;
+  font-weight: 200;
+  padding: 0 1.4rem;
+  ${media.lessThan("large")`
+    font-size: 1.6rem;
+    line-height: 1.3;
+    padding: 0 1rem;
+  `}
+`
+
 export const TitleContainer = styled.div`
   display: flex;
   align-items: center;
@@ -21,8 +43,16 @@ export const TitleContainer = styled.div`
 `
 
 export const PostTitle = styled.h1`
-  font-size: 3rem;
-  align-self: flex-start;
+  font-size: 4rem;
+  font-weight: 700;
+  padding: 0 1.4rem;
+  margin: 1rem auto;
+  
+  ${media.lessThan("large")`
+    font-size: 2.8rem;
+    line-height: 1.1;
+    padding: 0 1rem;
+  `}
 `
 
 export const MainContent = styled.section`

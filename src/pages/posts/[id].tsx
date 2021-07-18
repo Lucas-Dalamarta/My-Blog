@@ -28,6 +28,7 @@ type PostProps = {
   postData: {
     title: string
     contentHtml: string
+    description: string
   }
 }
 
@@ -37,6 +38,10 @@ export default function Post({ postData }: PostProps) {
       <Head>
         <title>{postData.title}</title>
       </Head>
+      <S.PostHeader>
+        <S.PostTitle>{postData.title}</S.PostTitle>
+        <S.PostDescription>{postData.description}</S.PostDescription>
+      </S.PostHeader>
       <S.PostContainer>
         <S.MainContent>
           <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
