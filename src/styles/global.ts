@@ -63,15 +63,25 @@ const GlobalStyles = createGlobalStyle`
   	height: auto;
   }
 
-  html {
-    --borders: #38444d;
-    --texts: #8899a6;
-    --postColor: #fff;
-    --highlight: #1fa1f2;
-    --mediumBackground: #192734;
-    --background: #16202c;
-    --white: #fff;
-    --black: #222;
+  a {
+    transition: color 500ms;
+    text-decoration: none;
+  }
+
+  a, a:visited, a:hover, a:active {
+    color: inherit;
+  }
+
+  a:hover {
+    color: #009FB7;
+  }
+
+  :root {
+    --primary: #E0C879;
+    --secondary: #009FB7;
+    --terciary: #009FB7;
+    --background: #252422;
+    --white: #FFFFFF;
   }
 `
 
