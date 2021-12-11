@@ -4,6 +4,7 @@ description: O dia que eu tomei café com leite de coco e visitei a maior empres
 image: assets/img/us-at-google.jpeg
 category: road
 background: "#EDDD53"
+date: "2021-11-23"
 ---
 
 ## Visitando a Big G!
