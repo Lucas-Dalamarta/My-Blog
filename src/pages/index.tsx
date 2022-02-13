@@ -4,10 +4,11 @@ import Link from "next/link";
 
 import moment from "moment";
 
-import Layout, { siteTitle } from "../components/layout";
-import { getSortedPostsData } from "../lib/blog";
 
 import utilStyles from "../styles/utils.module.css";
+import Layout from "../components/Layout";
+import { getSortedPostsData } from "../lib/blog";
+import { DEV_INFO, SITE_TITLE } from "../shared/constants";
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
@@ -31,11 +32,8 @@ export default function Home({
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{SITE_TITLE}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Desenvolvedor Fullstack na UseMobile</p>
-      </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
