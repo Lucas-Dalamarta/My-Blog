@@ -1,19 +1,15 @@
 
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 
-import { DEV_INFO, SITE_TITLE } from "../../shared/constants";
+import { SITE_TITLE } from "../../shared/constants";
 
-import { Header } from "../Header";
+import { Sidebar } from "../Header";
 import * as S from "./styled";
 
 export default function Layout({
   children,
-  home,
 }: {
   children: React.ReactNode;
-  home?: boolean;
 }) {
   return (
     <S.Container>
@@ -32,17 +28,10 @@ export default function Layout({
         <meta name="og:title" content={SITE_TITLE} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <S.Header>
-        <Header isHome={home} />
-      </S.Header>
-      <main>{children}</main>
-      {!home && (
-        <S.BackToHome>
-          <Link href="/">
-            <a>← Voltar</a>
-          </Link>
-        </S.BackToHome>
-      )}
+
+      <Sidebar />
+
+      <main style={{ padding: "48px" }}>{children}</main>
     </S.Container>
   );
 }

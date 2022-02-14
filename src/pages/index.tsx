@@ -8,7 +8,7 @@ import moment from "moment";
 import utilStyles from "../styles/utils.module.css";
 import Layout from "../components/Layout";
 import { getSortedPostsData } from "../lib/blog";
-import { DEV_INFO, SITE_TITLE } from "../shared/constants";
+import { SITE_TITLE } from "../shared/constants";
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
@@ -30,7 +30,7 @@ export default function Home({
   }[];
 }) {
   return (
-    <Layout home>
+    <Layout>
       <Head>
         <title>{SITE_TITLE}</title>
       </Head>
@@ -38,7 +38,15 @@ export default function Home({
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title, description }) => (
-            <li className={utilStyles.listItem} key={id}>
+            <li
+              key={id}
+              className={utilStyles.listItem}
+              style={{
+                border: "1px solid #e6e6e6",
+                padding: "14px",
+                borderRadius: "8px",
+              }}
+            >
               <p>{moment(date).format("DD/MM/YYYY")}</p>
               <Link href={`/blog/${id}`}>
                 <a>{title}</a>
