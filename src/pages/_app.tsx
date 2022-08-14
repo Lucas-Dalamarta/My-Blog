@@ -1,6 +1,26 @@
-import "../styles/global.css";
+import 'antd/dist/antd.css';
+import { GlobalStyle } from "../styles/global";
 import { AppProps } from "next/app";
+import { ViewportProvider } from "../contexts/Viewport";
+import { BlogLayout } from "../components/BlogLayout";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+type ComponentWithLayout = AppProps & {
+  Component: AppProps['Component'] & {
+    PageLayout?: React.ComponentType;
+  }
 }
+
+const App = ({ Component, pageProps }: ComponentWithLayout) => {
+  return (
+    <>
+      <GlobalStyle />
+      <ViewportProvider>
+        <BlogLayout>
+          <Component {...pageProps} />
+        </BlogLayout>
+      </ViewportProvider>
+    </>
+  )
+}
+
+export default App;

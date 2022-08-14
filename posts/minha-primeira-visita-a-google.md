@@ -1,5 +1,5 @@
 ---
-title: Minha primeira visita à Google-SP
+title: Minha primeira visita à Google - SP
 description: O dia que eu tomei café com leite de coco e visitei a maior empresa de tecnologia do mundo!
 image: assets/img/us-at-google.jpeg
 category: road

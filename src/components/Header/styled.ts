@@ -1,48 +1,53 @@
-import Image from "next/image";
-import styled  from "styled-components";
+import styled from "styled-components";
 
-export const BorderCircle = styled(Image)`
-  border-radius: 9999px;
-`
-export const Sidebar = styled.aside`
-  min-width: 20vw;
-  max-width: 20vw;
-  min-height: 100vh;
-  max-height: 100vh;
-  border-right: 1px solid #e6e6e6;
-  
-  display: flex;
-  flex-direction: column;
+export const Header = styled.header`
+  padding: 0 2rem;
+  margin: 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10rem;
   align-items: center;
-  gap: 16px;
-  
-  padding: 16px;
-
-  position: sticky;
-  top: 0;
+  justify-items: center;
 `
 
-export const Heading2XL = styled.h1`
-  font-size: 2.5rem;
-  line-height: 1.2;
-  font-weight: 800;
-  letter-spacing: -0.05rem;
-  margin: 1rem 0;
-`
-
-export const HeadingLG = styled.h2`
-  font-size: 1.2rem;
-  line-height: 1.2rem;
-  margin: 0.5rem 0;
-`
-
-export const HeadingMD = styled.section`
-  font-size: 1rem;
-  line-height: 1rem;
-  margin: 0.5rem 0;
-`
-
-export const ColorInherit = styled.a`
-  color: inherit;
+export const DeveloperTitle = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   cursor: pointer;
+  
+  .name {
+    color: #50B2C0;
+    font-family: Roboto, sans-serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+  }
 `
+
+export const Nav = styled.nav`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+type LinkProps = {
+  isActive?: boolean;
+}
+
+export const Link = styled.li<LinkProps>`
+  list-style: none;
+  ${props => props.isActive && `
+    border-bottom: 2px solid #50B2C0;
+  `}
+  
+  a {
+    color: #222;
+    text-decoration: none;
+  }
+
+  a::link {
+    text-decoration: none;
+  }
+`
+
