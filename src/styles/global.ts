@@ -64,4 +64,8 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 800;
     letter-spacing: -0.05rem;
   }
+
+  :root {
+    --color-primary: #4DCCBD;
+  }
 `

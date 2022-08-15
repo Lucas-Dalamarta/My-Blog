@@ -18,7 +18,7 @@ export const DeveloperTitle = styled.div`
   cursor: pointer;
   
   .name {
-    color: #50B2C0;
+    color: var(--color-primary);
     font-family: Roboto, sans-serif;
     font-size: 1.7rem;
     font-weight: 600;
@@ -38,7 +38,7 @@ type LinkProps = {
 export const Link = styled.li<LinkProps>`
   list-style: none;
   ${props => props.isActive && `
-    border-bottom: 2px solid #50B2C0;
+    border-bottom: 2px solid var(--color-primary);
   `}
   
   a {
