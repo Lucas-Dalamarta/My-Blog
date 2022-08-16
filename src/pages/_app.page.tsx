@@ -1,13 +1,10 @@
-import 'antd/dist/antd.css';
 import { GlobalStyle } from "../styles/global";
 import { AppProps } from "next/app";
 import { ViewportProvider } from "../contexts/Viewport";
-import { BlogLayout } from "../components/BlogLayout";
+import { LayoutType } from "../lib/types";
 
 type ComponentWithLayout = AppProps & {
-  Component: AppProps['Component'] & {
-    PageLayout?: React.ComponentType;
-  }
+  Component: AppProps['Component'] & LayoutType
 }
 
 const App = ({ Component, pageProps }: ComponentWithLayout) => {
@@ -15,9 +12,15 @@ const App = ({ Component, pageProps }: ComponentWithLayout) => {
     <>
       <GlobalStyle />
       <ViewportProvider>
-        <BlogLayout>
-          <Component {...pageProps} />
-        </BlogLayout>
+        {
+          Component.Layout ? (
+            <Component.Layout>
+              <Component {...pageProps} />
+            </Component.Layout>
+          ) : (
+            <Component {...pageProps} />
+          )
+        }
       </ViewportProvider>
     </>
   )

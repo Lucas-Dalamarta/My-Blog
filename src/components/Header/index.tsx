@@ -1,12 +1,26 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
+
+import { MdLightMode as Light, MdDarkMode as Dark} from 'react-icons/md';
 
 import { DEV_INFO } from "../../shared/constants";
 
 import * as S from "./styled";
 
+type themes = "light" | "dark";
+
 export const Header = () => {
   const router = useRouter();
+
+  const [theme, setTheme] = useState<themes>("light");
+  const handleThemeChange = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }
 
   return (
     <S.Header>
@@ -42,8 +56,15 @@ export const Header = () => {
       </S.Nav>
 
       <div>
-        <button onClick={() => {}}>
-          Toggle Theme
+        <button 
+          onClick={handleThemeChange}
+            style={{
+              border: "none",
+              background: "none",
+            }}
+        >
+          {theme === "light" && <Light size={28} color="var(--color-primary)"/>}
+          {theme === "dark" && <Dark size={28} color="var(--color-primary)" />}
         </button>
       </div>
     </S.Header>

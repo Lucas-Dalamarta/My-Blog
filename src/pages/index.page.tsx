@@ -1,9 +1,10 @@
-import { NextPage } from "next";
 import Head from "next/head";
+import { BlogLayout } from "../components/BlogLayout";
+import { BlogPage } from "../lib/types";
 
 import { SITE_TITLE } from "../shared/constants";
 
-const Home: NextPage = () => {
+const Home: BlogPage = () => {
   return (
     <>
       <Head>
@@ -16,4 +17,5 @@ const Home: NextPage = () => {
   );
 }
 
+Home.Layout = BlogLayout;
 export default Home;

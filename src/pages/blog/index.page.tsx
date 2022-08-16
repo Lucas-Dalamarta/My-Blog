@@ -1,10 +1,10 @@
-import { GetStaticProps, NextPage } from "next";
+import { GetStaticProps } from "next";
 import Link from "next/link";
 import moment from "moment";
 
-import { Divider, Card } from "antd";
-
 import { getSortedPostsData } from "../../lib/blog";
+import { BlogPage } from "../../lib/types";
+import { BlogLayout } from "../../components/BlogLayout";
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Blog: NextPage = ({ allPostsData } : any) => {
+const Blog: BlogPage = ({ allPostsData } : any) => {
   return (
     <>
       <h1>Postagens</h1>
@@ -84,5 +84,6 @@ const Blog: NextPage = ({ allPostsData } : any) => {
   )
 }
 
+Blog.Layout = BlogLayout;
 export default Blog;
 

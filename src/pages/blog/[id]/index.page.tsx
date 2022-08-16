@@ -3,6 +3,8 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths, NextPage } from "next";
 
 import { getAllPostIds, getPostData } from "../../../lib/blog";
+import { BlogPage } from "../../../lib/types";
+import { BlogLayout } from "../../../components/BlogLayout";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
@@ -23,7 +25,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 }
 
-const Post: NextPage = ({ postData }: any) => {
+const Post: BlogPage = ({ postData }: any) => {
   return (
     <>
       <Head>
@@ -40,5 +42,6 @@ const Post: NextPage = ({ postData }: any) => {
   )
 }
 
+Post.Layout = BlogLayout;
 export default Post;
 

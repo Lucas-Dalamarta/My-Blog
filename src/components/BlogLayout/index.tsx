@@ -1,4 +1,3 @@
-
 import * as S from "./styled"
 
 import { Header } from "../Header"
