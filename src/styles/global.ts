@@ -34,6 +34,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: Roboto, sans-serif;
     line-height: 1.6;
     font-size: 18px;
+    background-color: var(--color-background);
   }
 
   body {
