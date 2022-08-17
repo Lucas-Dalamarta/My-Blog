@@ -35,6 +35,8 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.6;
     font-size: 18px;
     background-color: var(--color-background);
+    will-change: auto;
+    transition: 500ms;
   }
 
   body {
@@ -51,8 +53,10 @@ export const GlobalStyle = createGlobalStyle`
     font: inherit;
   }
 
-  p, h1, h2, h3, h4, h5, h6 {
+  p, h1, h2, h3, h4, h5, h6, li, ol {
     overflow-wrap: break-word;
+    color: var(--color-text);
+    margin: 16px;
   }
 
   #root, #__next {
@@ -64,9 +68,5 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.3;
     font-weight: 800;
     letter-spacing: -0.05rem;
-  }
-
-  :root {
-    --color-primary: #4DCCBD;
   }
 `

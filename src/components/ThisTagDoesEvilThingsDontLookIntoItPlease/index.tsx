@@ -1,17 +1,6 @@
-export const COLORS = {
-  light: {
-    text: "#222",
-    background: "#fff",
-    primary: "#07c",
-  },
-  dark: {
-    text: "#fff",
-    background: "#222",
-    primary: "#0cf",
-  },
-}
+import { COLORS } from "../../themes";
 
-export const MagicScriptTag = () => {
+export const ThisTagDoesEvilThingsDontLookIntoItPlease = () => {
   let codeToRunOnClient = `
   (function() {
     function getInitialColorMode() {

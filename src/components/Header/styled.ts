@@ -42,7 +42,7 @@ export const Link = styled.li<LinkProps>`
   `}
   
   a {
-    color: #222;
+    color: var(--color-text);
     text-decoration: none;
   }
 

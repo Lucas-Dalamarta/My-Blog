@@ -29,8 +29,8 @@ const Blog: BlogPage = ({ allPostsData } : any) => {
                 padding: "1rem",
                 cursor: "pointer",
                 borderRadius: "4px",
-                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
-                backgroundColor: "#FBFBFF",
+                boxShadow: "0px 0px 10px var(--color-shadow)",
+                backgroundColor: "var(--color-background)",
               }}>
                 
                 <div 
@@ -58,7 +58,7 @@ const Blog: BlogPage = ({ allPostsData } : any) => {
                     style={{
                       fontSize: "0.8rem",
                       fontWeight: 500,
-                      color: "#333232",
+                      color: "var(--color-text)",
                     }}
                   >
                     {moment(date).format("DD/MM/YYYY")}
@@ -69,6 +69,8 @@ const Blog: BlogPage = ({ allPostsData } : any) => {
                       fontFamily: "Roboto",
                       fontWeight: 400,
                       fontSize: "0.8rem",
+                      margin: 0,
+                      color: "var(--color-text)",
                     }}
                   >
                     {description}

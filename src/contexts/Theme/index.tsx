@@ -1,10 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react"
-import { COLORS } from "../../components/MagicScriptTag"
+import { COLORS } from "../../themes"
 
 export const ThemeContext = createContext({} as any)
 
 export const ThemeProvider = ({ children }) => {
-  const [colorMode, rawSetColorMode] = useState<any>('dark')
+  const [colorMode, rawSetColorMode] = useState<any>()
   useEffect(() => {
     const getPreferredColorMode = () => {
       const persistedColorPreference = window.localStorage.getItem('color-mode')
@@ -29,18 +29,16 @@ export const ThemeProvider = ({ children }) => {
     window.localStorage.setItem('color-mode', value)
 
     const root = window.document.documentElement;
-    root.style.setProperty(
-      '--color-text',
-      value === 'light' ? COLORS.light.text : COLORS.dark.text
-    );
-    root.style.setProperty(
-      '--color-background',
-      value === 'light' ? COLORS.light.background : COLORS.dark.background
-    );
-    root.style.setProperty(
-      '--color-primary',
-      value === 'light' ? COLORS.light.primary : COLORS.dark.primary
-    );
+    Object
+      .entries(COLORS)
+      .forEach(([name, color]) => {
+      root.style.setProperty(`--color-${color}`, COLORS[value][color])
+    })
+    
+    Object.entries(COLORS[value])
+      .forEach(([name, color]) =>
+        root.style.setProperty(`--color-${name}`, `${color}`)
+      )
   };
 
   const handleThemeChange = () => {

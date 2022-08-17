@@ -1,12 +1,14 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { MagicScriptTag } from '../components/MagicScriptTag';
+import { ThisTagDoesEvilThingsDontLookIntoItPlease } from '../components/ThisTagDoesEvilThingsDontLookIntoItPlease';
 
 const Document = () => {
   return (
     <Html>
       <Head />
       <body>
-        <MagicScriptTag />
+        {/* Carregando tema pré hydrate */}
+        <ThisTagDoesEvilThingsDontLookIntoItPlease />
+        
         <Main />
         <NextScript />
       </body>

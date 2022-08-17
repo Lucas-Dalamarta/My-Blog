@@ -1,6 +1,6 @@
 
 import Head from "next/head";
-import { GetStaticProps, GetStaticPaths, NextPage } from "next";
+import { GetStaticProps, GetStaticPaths } from "next";
 
 import { getAllPostIds, getPostData } from "../../../lib/blog";
 import { BlogPage } from "../../../lib/types";

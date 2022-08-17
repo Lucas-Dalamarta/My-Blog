@@ -39,7 +39,7 @@ export const Header = () => {
             <a>Blog</a>
           </Link>
         </S.Link>
-        <span style={{ margin: "0 16px", opacity: "0.5"}}>|</span>
+        <span style={{ margin: "0 16px", opacity: "0.2", color: "var(--color-text)"}}>|</span>
         <S.Link isActive={router.pathname === "/about"}>
           <Link href="/blog">
             <a>About</a>
@@ -55,8 +55,11 @@ export const Header = () => {
               background: "none",
             }}
         >
-          {colorMode === "light" && <Light size={28} color="var(--color-primary)"/>}
-          {colorMode === "dark" && <Dark size={28} color="var(--color-primary)" />}
+        {
+          colorMode === "light" 
+            ? <Light size={28} color="var(--color-primary)" /> 
+            : <Dark size={28} color="var(--color-primary)" />
+        }
         </button>
       </div>
     </S.Header>
