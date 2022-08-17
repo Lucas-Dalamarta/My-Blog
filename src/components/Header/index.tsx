@@ -48,18 +48,18 @@ export const Header = () => {
       </S.Nav>
 
       <div>
-        <button 
+        <button
           onClick={handleThemeChange}
-            style={{
-              border: "none",
-              background: "none",
-            }}
+          style={{
+            border: "none",
+            background: "none",
+          }}
         >
-        {
-          colorMode === "light" 
-            ? <Light size={28} color="var(--color-primary)" /> 
-            : <Dark size={28} color="var(--color-primary)" />
-        }
+          {
+            colorMode === "light"
+              ? <Light size={28} color="var(--color-primary)" />
+              : <Dark size={28} color="var(--color-primary)" />
+          }
         </button>
       </div>
     </S.Header>

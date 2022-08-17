@@ -8,7 +8,7 @@ const Document = () => {
       <body>
         {/* Carregando tema pré hydrate */}
         <ThisTagDoesEvilThingsDontLookIntoItPlease />
-        
+
         <Main />
         <NextScript />
       </body>

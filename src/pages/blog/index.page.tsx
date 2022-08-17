@@ -33,21 +33,23 @@ const Blog: BlogPage = ({ allPostsData } : any) => {
                 backgroundColor: "var(--color-background)",
               }}>
                 
-                <div 
-                  style={{ 
-                    borderBottom: "1px solid #e8e8e8",
-                    paddingBottom: "0.3rem",
-                  }}
-                >
-                  <span style={{
+                <span 
+                  style={{
                     color: "var(--color-primary)",
                     fontSize: "1rem",
                     fontWeight: 500,
                     height: "100%",
-                  }}>
-                    {title}
-                  </span>
-                </div>
+                  }}
+                >
+                  {title}
+                </span>
+                <div 
+                  style={{ 
+                    borderBottom: "1px solid var(--color-text)",
+                    opacity: 0.3,
+                    paddingBottom: "0.3rem",
+                  }}
+                />
 
                 <div 
                   style={{

@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: #0070f3;
+    color: var(--color-text);
     text-decoration: none;
   }
 
@@ -25,6 +25,8 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
     margin: 0;
+    will-change: auto;
+    transition: 500ms;
   }
 
   html, body {
@@ -35,8 +37,6 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.6;
     font-size: 18px;
     background-color: var(--color-background);
-    will-change: auto;
-    transition: 500ms;
   }
 
   body {

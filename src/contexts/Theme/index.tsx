@@ -4,7 +4,7 @@ import { COLORS } from "../../themes"
 export const ThemeContext = createContext({} as any)
 
 export const ThemeProvider = ({ children }) => {
-  const [colorMode, rawSetColorMode] = useState<any>()
+  const [colorMode, rawSetColorMode] = useState<any>('dark')
   useEffect(() => {
     const getPreferredColorMode = () => {
       const persistedColorPreference = window.localStorage.getItem('color-mode')
@@ -29,12 +29,6 @@ export const ThemeProvider = ({ children }) => {
     window.localStorage.setItem('color-mode', value)
 
     const root = window.document.documentElement;
-    Object
-      .entries(COLORS)
-      .forEach(([name, color]) => {
-      root.style.setProperty(`--color-${color}`, COLORS[value][color])
-    })
-    
     Object.entries(COLORS[value])
       .forEach(([name, color]) =>
         root.style.setProperty(`--color-${name}`, `${color}`)
