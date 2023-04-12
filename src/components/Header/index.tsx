@@ -9,10 +9,6 @@ import { DEV_INFO } from "../../shared/constants";
 import * as S from "./styled";
 import RandomizeTextOnHover from "../RandomizeTextOnHover";
 
-type themes = "light" | "dark";
-
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
 export const Header = () => {
   const router = useRouter();
   const { colorMode, handleThemeChange } = useTheme();
