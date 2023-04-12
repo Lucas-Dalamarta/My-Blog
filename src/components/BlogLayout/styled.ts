@@ -2,9 +2,10 @@ import styled from 'styled-components'
 
 export const Layout = styled.div`
   min-height: 100vh;
-  border: 1px solid transparent;
+  max-width: 1400px;
 `
 
 export const Content = styled.div`
-  padding: 3rem 5rem;
+  padding: 2.5rem 3.5rem;
+  width: 1200px;
 `

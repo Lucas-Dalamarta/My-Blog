@@ -1,8 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Header = styled.header`
   padding: 0 2rem;
   margin: 2rem;
+
+  width: 1200px;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -11,10 +13,27 @@ export const Header = styled.header`
   justify-items: center;
 `
 
+const blinkCursor = keyframes`
+  0% {
+    border-left: 2px solid #f2f2f2;
+  }
+  50% {
+    border-left: 2px solid transparent;
+  }
+  100% {
+    border-left: 2px solid #f2f2f2;
+  }
+`;
+
 export const DeveloperTitle = styled.div`
+  height: 64px;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  width: 370px;
+
   cursor: pointer;
   
   .name {
@@ -22,6 +41,9 @@ export const DeveloperTitle = styled.div`
     font-family: Roboto, sans-serif;
     font-size: 1.7rem;
     font-weight: 600;
+    padding: 0rem 1rem;
+
+    animation: ${blinkCursor} 1s linear infinite;
   }
 `
 
@@ -29,6 +51,8 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 8px;
 `
 
 type LinkProps = {

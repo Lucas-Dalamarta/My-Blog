@@ -23,65 +23,63 @@ const Blog: BlogPage = ({ allPostsData } : any) => {
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12}}>
         {allPostsData.map(({ id, date, title, description }) => (
-          <>
-            <Link href={`/blog/${id}`}>
-              <div style={{
-                padding: "1rem",
-                cursor: "pointer",
-                borderRadius: "4px",
-                boxShadow: "0px 0px 10px var(--color-shadow)",
-                backgroundColor: "var(--color-background)",
-              }}>
-                
-                <span 
+          <Link href={`/blog/${id}`} key={id}>
+            <div style={{
+              padding: "1rem",
+              cursor: "pointer",
+              borderRadius: "4px",
+              boxShadow: "0px 0px 10px var(--color-shadow)",
+              backgroundColor: "var(--color-background)",
+            }}>
+              
+              <span 
+                style={{
+                  color: "var(--color-primary)",
+                  fontSize: "1rem",
+                  fontWeight: 500,
+                  height: "100%",
+                }}
+              >
+                {title}
+              </span>
+              <div 
+                style={{ 
+                  borderBottom: "1px solid var(--color-text)",
+                  opacity: 0.3,
+                  paddingBottom: "0.3rem",
+                }}
+              />
+
+              <div 
+                style={{
+                  paddingTop: "0.5rem",
+                }}
+              >
+                <span
                   style={{
-                    color: "var(--color-primary)",
-                    fontSize: "1rem",
+                    fontSize: "0.8rem",
                     fontWeight: 500,
-                    height: "100%",
+                    color: "var(--color-text)",
                   }}
                 >
-                  {title}
+                  {moment(date).format("DD/MM/YYYY")}
                 </span>
-                <div 
-                  style={{ 
-                    borderBottom: "1px solid var(--color-text)",
-                    opacity: 0.3,
-                    paddingBottom: "0.3rem",
-                  }}
-                />
-
-                <div 
+                <p
                   style={{
                     paddingTop: "0.5rem",
+                    fontFamily: "Roboto",
+                    fontWeight: 400,
+                    fontSize: "0.8rem",
+                    margin: 0,
+                    color: "var(--color-text)",
                   }}
                 >
-                  <span
-                    style={{
-                      fontSize: "0.8rem",
-                      fontWeight: 500,
-                      color: "var(--color-text)",
-                    }}
-                  >
-                    {moment(date).format("DD/MM/YYYY")}
-                  </span>
-                  <p
-                    style={{
-                      paddingTop: "0.5rem",
-                      fontFamily: "Roboto",
-                      fontWeight: 400,
-                      fontSize: "0.8rem",
-                      margin: 0,
-                      color: "var(--color-text)",
-                    }}
-                  >
-                    {description}
-                  </p>
-                </div>
+                  {description}
+                </p>
               </div>
+            </div>
 
-            </Link>
-          </>
+          </Link>
         ))}
       </div>
     </>

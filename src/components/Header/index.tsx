@@ -7,8 +7,11 @@ import { useTheme } from "../../contexts/Theme";
 import { DEV_INFO } from "../../shared/constants";
 
 import * as S from "./styled";
+import RandomizeTextOnHover from "../RandomizeTextOnHover";
 
 type themes = "light" | "dark";
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 export const Header = () => {
   const router = useRouter();
@@ -18,17 +21,8 @@ export const Header = () => {
     <S.Header>
       <div>
         <Link href="/">
-          <S.DeveloperTitle
-            style={{
-              display: "flex",
-              height: 64,
-              gap: 12,
-              cursor: "pointer",
-            }}
-          >
-            <span className="name">
-              {DEV_INFO.name}
-            </span>
+          <S.DeveloperTitle>
+            <RandomizeTextOnHover text={DEV_INFO.name} />
           </S.DeveloperTitle>
         </Link>
       </div>

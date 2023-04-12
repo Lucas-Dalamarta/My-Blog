@@ -26,6 +26,5 @@ const App = ({ Component, pageProps }: ComponentWithLayout) => {
     </ThemeProvider>
   )
 }
-// dangerouslySetInnerHTML = {{ __html: postData.contentHtml }}
 
 export default App;

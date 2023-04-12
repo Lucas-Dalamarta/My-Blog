@@ -5,7 +5,7 @@ import { Header } from "../Header"
 export const BlogLayout = ({ children }: any) => {
   return (
     <div style={{ display: "flex", justifyContent: "center"}}>
-      <S.Layout style={{ maxWidth: 1400 }}>
+      <S.Layout>
         <Header />
         <S.Content>
           {children}
